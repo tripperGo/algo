@@ -1,7 +1,5 @@
 package com.mright.mq.chapter01;
 
-import org.junit.Test;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -49,16 +47,6 @@ public class QueueDemo {
     private static String printWeekDay(Date date) {
         SimpleDateFormat sdw = new SimpleDateFormat("E");
         return sdw.format(date);
-    }
-
-    @Test
-    public void test(){
-        Calendar cal = Calendar.getInstance();
-        cal.setFirstDayOfWeek(8);
-        int day = cal.get(Calendar.DAY_OF_WEEK);
-        cal.add(Calendar.DATE, cal.getFirstDayOfWeek() - day);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-        System.out.println(sdf.format(cal.getTime()));
     }
 
 }
