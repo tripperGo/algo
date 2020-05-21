@@ -84,7 +84,6 @@ public class ArrayBlockingQueueDemo {
             System.out.println(queue.offer(2, 2, TimeUnit.SECONDS));
             System.out.println(queue.offer(3, 2, TimeUnit.SECONDS));
             System.out.println(queue.offer(4, 2, TimeUnit.SECONDS));
-
             System.out.println(queue.poll(2, TimeUnit.SECONDS));
             System.out.println(queue.poll(2, TimeUnit.SECONDS));
             System.out.println(queue.poll(2, TimeUnit.SECONDS));
