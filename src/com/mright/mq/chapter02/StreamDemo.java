@@ -1,6 +1,7 @@
 package com.mright.mq.chapter02;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -35,7 +36,7 @@ public class StreamDemo {
                 .filter(u -> u.getId() % 2 == 0)
                 .filter(u -> u.getAge() > 23)
                 .map(u -> u.getName().toUpperCase())
-                .sorted((u1, u2) -> u2.compareTo(u1))
+                .sorted(Comparator.reverseOrder())
                 .limit(1)
                 .forEach(System.out::println);
     }
