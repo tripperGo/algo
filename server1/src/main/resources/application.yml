@@ -1,0 +1,24 @@
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+server:
+  port: 9092
+
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      filters:  stat
+      initial-size:  1
+      max-active:  20
+      max-pool-prepared-statement-per-connection-size:  20
+      max-wait:  60000
+      min-evictable-idle-time-millis:  300000
+      min-idle:  1
+      password:  .
+      test-on-borrow:  false
+      test-on-return:  false
+      test-while-idle:  true
+      time-between-eviction-runs-millis:  60000
+      username:  root
+      validation-query:  SELECT 'x'
+      url: jdbc:mysql://localhost:3306/sys?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=true&serverTimezone=Asia/Shanghai
