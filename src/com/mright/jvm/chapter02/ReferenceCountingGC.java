@@ -1,5 +1,7 @@
 package com.mright.jvm.chapter02;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * @author : zhaochuanzhen
  * @description :
@@ -26,7 +28,27 @@ public class ReferenceCountingGC {
     }
 
     public static void main(String[] args) {
-        System.out.println(2142);
-        testGC();
+        for(int i = 0; i < 20; i++){
+
+            System.out.println(Fibonacci(i));
+        }
+    }
+
+    public static int Fibonacci(int n) {
+        int i = 1, j = 1;
+        if(n == 0){
+            return 0;
+        }
+        if(n <= 2){
+            return 1;
+        }
+
+        for(int m = 3; m <= n; m++){
+            int temp = j;
+            j = i + j;
+            i = temp;
+        }
+
+        return j;
     }
 }
